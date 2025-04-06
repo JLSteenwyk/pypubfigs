@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/JLSteenwyk/ggpubfigs/pypubfigs_logo.png" alt="Logo" width="400">
+    <img src="https://github.com/JLSteenwyk/pypubfigs/pypubfigs_logo.png" alt="Logo" width="400">
 </p>
 
 <p align="center">
