@@ -1,26 +1,11 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-
 def _set_theme(style='white', params=None):
     """Set the base theme using seaborn and matplotlib."""
     sns.set_theme(style=style)
     if params:
         plt.rcParams.update(params)
-
-def _move_legend_bottom(ax, y_offset=-0.1, text_color=None, base_size=12):
-    """Helper function to place legend below the plot."""
-    legend = ax.legend(
-        loc='upper center',
-        bbox_to_anchor=(0.5, y_offset),
-        frameon=False,
-        ncol=3,
-        fontsize=base_size,
-        title_fontsize=base_size + 2
-    )
-    if text_color:
-        plt.setp(legend.get_texts(), color=text_color)
-        plt.setp(legend.get_title(), color=text_color)
 
 # === Themes ===
 
@@ -41,7 +26,6 @@ def theme_simple(base_size=12):
         'axes.spines.right': False,
     }
     _set_theme('white', params)
-    return lambda ax: _move_legend_bottom(ax, base_size=base_size)
 
 def theme_red(base_size=12):
     params = {
@@ -63,7 +47,6 @@ def theme_red(base_size=12):
         'axes.spines.right': False,
     }
     _set_theme('dark', params)
-    return lambda ax: _move_legend_bottom(ax, text_color='white', base_size=base_size)
 
 def theme_grid(base_size=12):
     params = {
@@ -79,7 +62,6 @@ def theme_grid(base_size=12):
         'axes.spines.right': False,
     }
     _set_theme('whitegrid', params)
-    return lambda ax: _move_legend_bottom(ax, base_size=base_size)
 
 def theme_grey(base_size=12):
     params = {
@@ -95,7 +77,6 @@ def theme_grey(base_size=12):
         'axes.spines.right': False,
     }
     _set_theme('white', params)
-    return lambda ax: _move_legend_bottom(ax, base_size=base_size)
 
 def theme_blue(base_size=12):
     params = {
@@ -115,7 +96,6 @@ def theme_blue(base_size=12):
         'axes.spines.right': False,
     }
     _set_theme('dark', params)
-    return lambda ax: _move_legend_bottom(ax, text_color='white', base_size=base_size)
 
 def theme_black(base_size=12):
     params = {
@@ -135,7 +115,6 @@ def theme_black(base_size=12):
         'axes.spines.right': False,
     }
     _set_theme('dark', params)
-    return lambda ax: _move_legend_bottom(ax, text_color='white', base_size=base_size)
 
 def theme_big_simple(base_size=16):
     params = {
@@ -155,7 +134,6 @@ def theme_big_simple(base_size=16):
         'axes.spines.right': False,
     }
     _set_theme('white', params)
-    return lambda ax: _move_legend_bottom(ax, y_offset=-0.15, base_size=base_size)
 
 def theme_big_grid(base_size=12):
     params = {
@@ -173,4 +151,3 @@ def theme_big_grid(base_size=12):
         'axes.spines.right': False,
     }
     _set_theme('whitegrid', params)
-    return lambda ax: _move_legend_bottom(ax, y_offset=-0.15, base_size=base_size)
