@@ -63,6 +63,10 @@ def theme_grid(base_size=12):
     }
     _set_theme('whitegrid', params)
 
+    def apply(ax):
+        ax.grid(True)  # ensure the grid is visible
+    return apply
+
 def theme_grey(base_size=12):
     params = {
         'font.size': base_size,
@@ -151,3 +155,7 @@ def theme_big_grid(base_size=12):
         'axes.spines.right': False,
     }
     _set_theme('whitegrid', params)
+    
+    def apply(ax):
+        ax.grid(True)  # ensure the grid is visible
+    return apply
